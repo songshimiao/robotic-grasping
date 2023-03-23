@@ -16,7 +16,7 @@ from utils.visualisation.plot import plot_grasp
 class GraspGenerator:
     def __init__(self, saved_model_path, cam_id, visualize=False):
         self.saved_model_path = saved_model_path
-        self.camera = RealSenseCamera(device_id=cam_id)
+        self.camera = RealSenseCamera()
 
         self.saved_model_path = saved_model_path
         self.model = None

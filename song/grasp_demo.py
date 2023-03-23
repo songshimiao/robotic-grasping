@@ -11,9 +11,13 @@ logging.getLogger().setLevel(logging.INFO)
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--model-path', default='../trained-models/epoch_34_iou_91')
+parser.add_argument('--model_path', default='../trained-models/epoch_34_iou_91')
 cfgs = parser.parse_args()
 
-# class Grasp():
+class Grasp():
     
-#     def __init__(self):
+    def __init__(self):
+        self.model_path = cfgs.model_path
+        self.camera = RealsenseD535()
+        self.model = None
+        self.device = None
