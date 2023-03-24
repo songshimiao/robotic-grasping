@@ -104,3 +104,7 @@ class GraspGenerator:
                 np.save(self.grasp_available, 1)
             else:
                 time.sleep(0.1)
+
+
+if __name__ == '__main__':
+    net = torch.load()

@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from data_processing import Image
+from .data_processing import Image
 
 class CameraData:
     def __init__(self, width=640, height=480, output_size=300):
