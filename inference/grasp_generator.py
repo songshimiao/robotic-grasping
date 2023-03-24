@@ -14,7 +14,7 @@ from utils.visualisation.plot import plot_grasp
 
 
 class GraspGenerator:
-    def __init__(self, saved_model_path, cam_id, visualize=False):
+    def __init__(self, saved_model_path, visualize=False):
         self.saved_model_path = saved_model_path
         self.camera = RealSenseCamera()
 
@@ -107,4 +107,6 @@ class GraspGenerator:
 
 
 if __name__ == '__main__':
-    net = torch.load()
+    g = GraspGenerator()
+    g.load_model()
+    g.generate()
