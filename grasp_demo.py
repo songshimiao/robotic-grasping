@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 from song.realsenseD435 import RealsenseD535
+import pyrealsense2 as rs
 from song.camera_date import CameraData
 import song.grasp
 from PIL import Image
@@ -52,8 +53,8 @@ class Grasp():
         
         # get x (B x C x H x W) -> net
         x, depth_img, color_img = self.cam_data.get_data(color_image, depth_image)
-        logging.info('color_img.shape:{}'.format(color_image.shape))
-        logging.info('depth_img.shape:{}'.format(depth_image.shape))
+        logging.info('color_image.shape:{}'.format(color_image.shape))
+        logging.info('depth_image.shape:{}'.format(depth_image.shape))
         logging.info('x.shape: {}'.format(x.shape))
         logging.info('depth_img.shape: {}'.format(depth_img.shape))
         logging.info('color_img.shape: {}'.format(color_img.shape))
