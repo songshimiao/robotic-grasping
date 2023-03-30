@@ -7,7 +7,7 @@ import pyrealsense2 as rs
 logging.getLogger().setLevel(logging.INFO)
 
 
-class RealsenseD535(object):
+class RealsenseD435(object):
     
     def __init__(self):
         self.image_height = 480
@@ -96,7 +96,7 @@ class RealsenseD535(object):
         
         
 if __name__ == '__main__':
-    camera = RealsenseD535()
+    camera = RealsenseD435()
     camera.init_cam()
     color_img, depth_img = camera.get_data()
     logging.info('color_img.shape:{}'.format(color_img.shape))
@@ -105,5 +105,9 @@ if __name__ == '__main__':
     while(True):
         camera.plot_image()
         time.sleep(0.1)
+        key = cv2.waitKey(1)
+        if key == 27:
+            cv2.destroyAllWindows()
+            break
         
             
